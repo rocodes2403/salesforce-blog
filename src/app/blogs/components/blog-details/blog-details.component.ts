@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -22,7 +21,6 @@ export class BlogDetailsComponent implements OnInit {
   private destroy$ = new Subject();
 
   constructor(private blogService: BlogService,
-    private snackbar: MatSnackBar,
     private route: ActivatedRoute,
     private editDialog: MatDialog) { 
     this.blogId = route.snapshot.params.blogId
