@@ -1,0 +1,14 @@
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    grid-auto-rows: auto;
+    place-content: center;
+    overflow-x: hidden;
+    grid-gap: 10px;
+    padding:12px;
+}
+
+.empty-state {
+    padding: 50px 0;
+    text-align: center;
+}

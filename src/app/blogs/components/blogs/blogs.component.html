@@ -1,0 +1,17 @@
+<div class="blogs-holder">
+    <div class="toolbar-container">
+        <app-toolbar (refreshBlogs)="refreshBlogs()"></app-toolbar>
+    </div>
+
+    <div *ngIf="blogList && blogList.length===0" class="empty-state">
+        You don't have any blogs published! Please use the "Create New" button on the top to start blogging!
+    </div>
+
+    <mat-spinner *ngIf="isLoading" style="margin:100px auto;" ></mat-spinner>
+
+    <div class="blog-grid">    
+        <app-blog-item *ngFor="let blog of blogList" [blog]="blog" (refreshBlogs)="refreshBlogs()">
+        </app-blog-item>
+    </div>
+    
+</div>

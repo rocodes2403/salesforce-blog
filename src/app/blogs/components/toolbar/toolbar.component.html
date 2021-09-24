@@ -1,0 +1,20 @@
+<div class="flex-container">
+    <div>
+        <div *ngIf="enableHomeButton">
+            <button mat-icon-button aria-label="Back to Home" matTooltip="Back to Home" routerLink="/">
+                <mat-icon>home</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="create-blog">
+        <button mat-flat-button color="primary" class="add-blog" (click)="createBlog()" matTooltip="Click to Create New blog">
+          + NEW BLOG
+        </button>
+
+        &nbsp;
+
+        <button mat-flat-button *ngIf="!enableHomeButton" class="add-blog" (click)="deleteAllBlog()" matTooltip="Click to delete all">
+            DELETE ALL
+        </button>
+    </div>
+</div>

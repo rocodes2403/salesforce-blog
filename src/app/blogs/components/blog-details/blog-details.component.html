@@ -1,0 +1,19 @@
+<div class="blog-container">
+    <app-toolbar [enableHomeButton]=true></app-toolbar>
+    <mat-spinner *ngIf="isLoading" style="margin:100px auto;"></mat-spinner>
+    <div class="blog-details" *ngIf="blog">
+        <h2 class="blog-title">
+            {{blog.title}}
+            <button mat-raised-button color="primary" class="edit-blog pull-right" (click)="editBlog(blog)"
+                matTooltip="Click to edit the blog">
+                EDIT
+            </button>
+        </h2>
+        <p class="blog-content">
+            {{blog.text}}
+        </p>
+    </div>
+    <div *ngIf="!blog && !isLoading" class="empty-state">
+        Sorry! Couldn't load this blog for you.
+    </div>
+</div>

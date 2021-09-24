@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>
+    <ng-container *ngIf="blogData.id">Edit Blog</ng-container>
+    <ng-container *ngIf="!blogData.id">Create New Blog</ng-container>
+</h1>
+<div mat-dialog-content>
+    <div class="blog-title">
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input type="text" matInput [(ngModel)]="blogData.title">
+        </mat-form-field>
+    </div>
+    <div class="blog-text">
+        <mat-form-field appearance="outline">
+            <mat-label>Content</mat-label>
+            <textarea matInput [(ngModel)]="blogData.text" rows="6"></textarea>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-flat-button color="primary" [mat-dialog-close]="blogData" cdkFocusInitial>
+        <ng-container *ngIf="blogData.id">Update</ng-container>
+        <ng-container *ngIf="!blogData.id">Create</ng-container>
+    </button>
+    <button mat-button (click)="cancelUpdate()">Cancel</button>
+</div>
